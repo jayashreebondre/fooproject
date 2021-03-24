@@ -8,7 +8,7 @@ ${URL}                           http://rental10.infotiv.net/
 
 *** Keywords ***
 Begin Web Test
-    Open browser                   about:blank              chrome
+    Open browser                   about:blank              ${Browser}
 Go to Web Page
     Load Page
     Verify Page Loaded
@@ -32,7 +32,7 @@ End Web Test
 User can access website
    [Documentation]                     This is some basic info about the test
    [Tags]                              Test 1
-   Given open browser                   about: blank          chrome
+   Given open browser                   about: blank          ${Browser}
    When GO to                          http://rental10.infotiv.net/
    Then Wait until page contains       When do you want to make your trip?
 
