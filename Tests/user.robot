@@ -51,8 +51,8 @@ Create a new user
    Given Input text                 id:name  Jayashree
    And Input text                   id:last  Bondre
    And Input text                   id:phone  1231231274
-   And Input text                   id:emailCreate  jayashree74@gmail.com
-   And Input text                   id:confirmEmail  jayashree74@gmail.com
+   And Input text                   id:emailCreate  jayashree174@gmail.com
+   And Input text                   id:confirmEmail  jayashree174@gmail.com
    And Input text                   id:passwordCreate  ITHS@123
    And Input text                   id:confirmPassword  ITHS@123
    When Press keys                  id:create        RETURN
