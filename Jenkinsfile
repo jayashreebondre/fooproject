@@ -15,6 +15,12 @@ pipeline {
         junit '**/TEST*.xml'
       }
      }
+      
   }
+    stage('newman') {
+      steps {
+        sh "mvn compile"
+      }
+    }  
  }
 }
