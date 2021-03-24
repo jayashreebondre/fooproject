@@ -3,7 +3,7 @@ Documentation                    This is the some basic info about the whole tes
 Library                          SeleniumLibrary
 
 *** Variables ***
-${Browser}                       chrome
+${Browser}                       headlesschrome
 ${URL}                           http://rental10.infotiv.net/
 
 *** Keywords ***
