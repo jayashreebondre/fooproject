@@ -5,7 +5,8 @@ pipeline {
       steps {
         sh "mvn compile"
       }
-    }  
+    }   
+    
     stage('Test') {
       steps {
         sh "mvn test"
@@ -15,12 +16,17 @@ pipeline {
         junit '**/TEST*.xml'
       }
      }
-      
   }
     stage('newman') {
-      steps {
-        sh "mvn compile"
-      }
-    }  
+            steps {
+                sh 'newman run collection.json --environment environment.json --reporters junit'
+            }
+            post {
+                always {
+                        junit '**/*xml'
+                    }
+                }
+        }
+       
  }
 }
