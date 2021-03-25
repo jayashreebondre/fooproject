@@ -23,7 +23,7 @@ pipeline {
      }
   }
     
-    stage('JaCoCo Coverage Report') {
+    stage('Code Coverage') {
      steps {
         sh "mvn test"
         junit '**/TEST*.xml'
