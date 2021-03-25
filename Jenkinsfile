@@ -22,6 +22,15 @@ pipeline {
       }
      }
   }
+    
+    stage('Code Coverage') {
+     steps {
+        sh "mvn compile"
+        junit '**/TEST*.xml'
+        step( [ $class: 'JacocoPublisher' ] )
+     }
+  }
+    
     stage('newman') {
             steps {
                 sh 'newman run collection.json --environment environment.json --reporters junit'
