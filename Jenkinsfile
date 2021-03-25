@@ -30,16 +30,7 @@ pipeline {
         step( [ $class: 'JacocoPublisher' ] )
      }
   }
-    
-    stage('JaCoCo Report') {
-    step([
-              $class           : 'JacocoPublisher',
-              execPattern      : ' **/**.exec',
-              sourcePattern    : 'src/main/java',
-              exclusionPattern : '**/*Test.class'
-          ])
-  }
-    
+   
     stage('newman') {
             steps {
                 sh 'newman run collection.json --environment environment.json --reporters junit'
