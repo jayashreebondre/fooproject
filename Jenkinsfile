@@ -23,10 +23,8 @@ pipeline {
      }
   }
     
-    stage('Code Coverage') {
+    stage('JaCoCo Coverage Report') {
      steps {
-        sh "mvn compile"
-        junit '**/TEST*.xml'
         step( [ $class: 'JacocoPublisher' ] )
      }
   }
