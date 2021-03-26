@@ -49,8 +49,8 @@ Login
 Make your trip
     [Documentation]                Make your trip
     [Tags]                         Test 3
-    Given Input text               id:start   04-25
-    And Input text                 id:end     04-27
+    Given Input text               id:start   04-27
+    And Input text                 id:end     04-29
     When Press keys                id:continue        RETURN
     Then Wait until page contains  What would you like to drive?
 
