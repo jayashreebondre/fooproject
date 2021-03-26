@@ -23,14 +23,14 @@ pipeline {
      }
   }
     
-    stage('Code Coverage') {
+  stage('Jococ Code Coverage') {
      steps {
-        sh "mvn test"
-        junit '**/TEST*.xml'
+        sh './jenkins_build.sh'
+        junit '*/build/test-results/*.xml'
         step( [ $class: 'JacocoPublisher' ] )
      }
-  }
-    
+}  
+     
    
     stage('newman') {
             steps {
