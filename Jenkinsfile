@@ -30,11 +30,7 @@ pipeline {
         step( [ $class: 'JacocoPublisher' ] )
      }
   }
-    stage ('Code Coverage report') {
-steps {
-jacoco changeBuildStatus: true, runAlways: true, skipCopyOfSrcFiles: true
-}
-}
+    
    
     stage('newman') {
             steps {
